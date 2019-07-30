@@ -1,0 +1,89 @@
+h1 {
+    display: inline;
+}
+
+h2 {
+    display: inline;
+}
+
+.button_inc {
+    width: 250px;
+    border-radius: 0;
+    font-size: 30pt;
+    padding: 10px 10px;
+    background-color: red;
+    display: inline-block;
+}
+
+.button_dec {
+    width: 250px;
+    border-radius: 0;
+    font-size: 30pt;
+    padding: 10px 10px;
+    background-color: blue;
+    display: inline-block;
+}
+
+.submit_inc {
+
+    -webkit-appearance: none;
+    border-radius: 0;
+    font-size: 30pt;
+    padding: 10px 10px;
+    background-color: pink;
+    display: inline-block;
+}
+
+.submit_dec {
+    -webkit-appearance: none;
+    border-radius: 0;
+    font-size: 30pt;
+    padding: 10px 10px;
+    background-color: blue;
+    display: inline-block;
+}
+
+.nor_css {
+    width: 400px;
+    background-color: yellow;
+    font-size: 30px;
+    padding: 10px 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.wm_css {
+    background-color: green;
+    font-size: 30px;
+    padding: 10px 10px;
+}
+
+.cs_css {
+    background-color: red;
+    font-size: 30px;
+    padding: 10px 10px;
+}
+
+.cw_css {
+    background-color: pink;
+    font-size: 30px;
+    padding: 10px 10px;
+}
+
+.ver {
+    font-size: 50px;
+    background-color: pink;
+}
+
+.mess_box {
+
+    width: 400px;
+    border: solid blue;
+}
+
+div#root2 {
+    background-color: pink;
+    font-size: 30px;
+    width: 400px;
+    border: solid blue;
+}
