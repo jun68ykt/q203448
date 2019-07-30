@@ -15,12 +15,9 @@ class App extends React.Component {
   }
 
   handleClickInc(e) {
-    {
-      /*alert(e.timeStamp+"に"+e.target.name+"を増やしました。");*/
-    }
-    {
-      /*this.setState({[e.target.name]:this.state[e.target.name]+1,mess:"aaaを1増やしました。"});*/
-    }
+    /*alert(e.timeStamp+"に"+e.target.name+"を増やしました。");*/
+    /*this.setState({[e.target.name]:this.state[e.target.name]+1,mess:"aaaを1増やしました。"});*/
+
     const { name } = e.target;
     this.setState((prevState, props) => ({
       [name]: prevState[name] + 1,
@@ -29,12 +26,9 @@ class App extends React.Component {
   }
 
   handleClickDec(e) {
-    {
-      /*alert(e.timeStamp+"に"+e.target.name+"減らしました。");*/
-    }
-    {
-      /*this.setState({[e.target.name]:prevState[e.target.name]-1,mess:"aaaを1減らしました。"});*/
-    }
+    /*alert(e.timeStamp+"に"+e.target.name+"減らしました。");*/
+    /*this.setState({[e.target.name]:prevState[e.target.name]-1,mess:"aaaを1減らしました。"});*/
+
     const { name } = e.target;
     this.setState((prevState, props) => ({
       [name]: prevState[name] - 1,
@@ -43,18 +37,12 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    {
-      /*document.cookie = 'aaa='+this.state.aaa;*/
-    }
-    {
-      /*document.cookie = 'bbb='+this.state.bbb;*/
-    }
-    {
-      /*
-            localStorage.setItem('aaa',this.state.aaa);
-            localStorage.setItem('bbb',this.state.bbb);
-*/
-    }
+    /* document.cookie = 'aaa='+this.state.aaa;*/
+    /* document.cookie = 'bbb='+this.state.bbb;*/
+    /*
+       localStorage.setItem('aaa',this.state.aaa);
+       localStorage.setItem('bbb',this.state.bbb);
+    */
 
     localStorage.setItem("aaa", this.state.aaa);
     localStorage.setItem("bbb", this.state.bbb);

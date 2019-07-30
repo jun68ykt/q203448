@@ -44,6 +44,7 @@ class MyState extends React.Component {
         <h1>{this.props.rolltype}</h1>
         <form action="" method="POST">
           <table>
+            <tbody>
             <tr>
               <td>
                 <input
@@ -71,6 +72,7 @@ class MyState extends React.Component {
                 {/*<input className ="button_dec" type="button" name={this.props.name} value={this.props.dec_mess} onClick={this.props.onClickDec}/>*/}
               </td>
             </tr>
+            </tbody>
           </table>
         </form>
         <hr />
