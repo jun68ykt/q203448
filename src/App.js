@@ -22,7 +22,7 @@ class App extends React.Component {
     const { types } = this.state
     this.setState({
       types: { ...types, [name]: types[name] + 1 },
-      mess: `${e.target.name}を1増やしました。`
+      mess: `${name}を1増やしました。`
     });
   }
 
@@ -31,7 +31,7 @@ class App extends React.Component {
     const { types } = this.state
     this.setState({
       types: { ...types, [name]: types[name] - 1 },
-      mess: `${e.target.name}を1減らしました。`
+      mess: `${name}を1減らしました。`
     });
   }
 
