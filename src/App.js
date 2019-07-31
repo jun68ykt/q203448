@@ -8,33 +8,29 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      types: [
-        { name:'aaa', count:0, roletype: 'りんご' },
-        { name:'bbb', count:0, roletype: 'みかん' },
-        { name:'ccc', count:0, roletype: 'バナナ' }
-      ],
+      types: {
+        ccc: 0,
+        aaa: 0,
+        bbb: 0
+      },
       mess: ""
     };
   }
 
   handleClickInc(e) {
-    const nextTypes = this.state.types.map(type => ({
-      ...type,
-      count: type.count + (type.name === e.target.name)
-    }))
+    const { name } = e.target
+    const { types } = this.state
     this.setState({
-      types: nextTypes,
+      types: { ...types, [name]: types[name] + 1 },
       mess: `${e.target.name}を1増やしました。`
     });
   }
 
   handleClickDec(e) {
-    const nextTypes = this.state.types.map(type => ({
-      ...type,
-      count: type.count - (type.name === e.target.name)
-    }))
+    const { name } = e.target
+    const { types } = this.state
     this.setState({
-      types: nextTypes,
+      types: { ...types, [name]: types[name] - 1 },
       mess: `${e.target.name}を1減らしました。`
     });
   }
@@ -47,24 +43,31 @@ class App extends React.Component {
        localStorage.setItem('bbb',this.state.bbb);
     */
 
-    this.state.types.forEach(type => {
-      localStorage.setItem(type.name, type.count);
+    Object.entries(this.state.types).forEach(([name, count]) => {
+      localStorage.setItem(name, count);
     })
   }
 
   render() {
+
+    const sortedTypes = Object.entries(this.state.types)
+                              .sort((e1, e2) => e1[0].localeCompare(e2[0]))
+
     return (
       <div>
-        {this.state.types.map(type => (<p>{localStorage.getItem(type.name)}</p>))}
+        {sortedTypes
+          .map(([name]) =>
+            <p key={name}>{name}: {localStorage.getItem(name)}</p>
+          )}
         <MessBox mess={this.state.mess} />
         {
-          this.state.types.map(type => (
-            <div key={type.name}>
-              <h1>{type.name}</h1>
+          sortedTypes.map(([name, count]) => (
+            <div key={name}>
+              <h1>{name}</h1>
               <MyState
-                roletype={type.roletype}
-                nor={type.count}
-                name={type.name}
+                roletype={name}
+                nor={count}
+                name={name}
                 inc_mess="+1"
                 dec_mess="-1"
                 onClickInc={e => this.handleClickInc(e)}
